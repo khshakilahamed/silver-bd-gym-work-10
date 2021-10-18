@@ -1,0 +1,44 @@
+.login-container{
+    background: url('https://i.ibb.co/mRBBzC3/login-bg.jpg');
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    background-attachment: fixed;
+    height: 500px;
+    text-align: center
+}
+
+.login-form{
+    border-radius: 10px;
+    width: 350px;
+    padding: 20px 20px;
+    background: rgba(0, 0, 0, 0.685);
+}
+
+.login-container input{
+    width: 300px;
+    background: transparent;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.hr-tag hr{
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    height: 2px;
+    color: white;
+}
+.or{
+    margin-top: -13px;
+}
+
+.authentication-btn{
+    background: none;
+    outline: none;
+    border: none;
+}

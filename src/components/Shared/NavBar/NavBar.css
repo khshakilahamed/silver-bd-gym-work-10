@@ -1,0 +1,7 @@
+.navItems{
+    text-decoration: none;
+    color: rgb(167, 167, 167);
+}
+.navItems:hover{
+    color: hsl(93, 41%, 46%) !important;
+}
