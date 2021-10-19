@@ -28,12 +28,15 @@ const NavBar = () => {
                                 <Link to="/services" className="navItems">Services</Link>
                             </Nav.Link>
                             <Nav.Link >
-                                <Link to="/gallery" className="navItems">Gallery</Link>
+                                <Link to="/packages" className="navItems">Packages</Link>
                             </Nav.Link>
                             <Nav.Link >
-                                <Link to="/blog" className="navItems">Blog</Link>
+                                <Link to="/blogs" className="navItems">Blogs</Link>
                             </Nav.Link>
-                            <Nav.Link as={HashLink} to="/home#pricing" className="navItems">About us</Nav.Link>
+                            <Nav.Link >
+                                <Link to="/about" className="navItems">About</Link>
+                            </Nav.Link>
+                            {/* <Nav.Link as={HashLink} to="/home#pricing" className="navItems">About us</Nav.Link> */}
                         </Nav>
 
                         {

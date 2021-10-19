@@ -14,8 +14,8 @@ const Banner = () => {
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>Build Muscle, Live Longer</h3>
+                    <p>Muscle helps manage blood sugar, Muscle builds strength and stamina. Muscle supports your joints. Building muscle builds bone, too.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -27,8 +27,8 @@ const Banner = () => {
 
                 <Carousel.Caption>
                     <div>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3 >Five benefits of battle ropes training</h3>
+                        <p>Blast fat, Sculpt muscles, Increase mobility, Likelihood of injuries is low, Good fun to use</p>
                     </div>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -40,8 +40,8 @@ const Banner = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <h3>Leg Exercise</h3>
+                    <p>Legs are the pillars for a healthy body and training them should be a top priority for overall physique and health.</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

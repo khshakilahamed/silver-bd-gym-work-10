@@ -1,50 +1,38 @@
 const packagesData = [
     {
         id: 1,
-        packageTitle: 'Body Building',
-        packageDuration: '1 Year Training',
-        classDuration: '30 Min Session',
-        image: 'https://i.ibb.co/z44gjg4/1.jpg',
-        packageDescription: ['Fitness testing, Diet Plan', 'Weekly motivation and accountability', 'Ongoing nutrition support', 'Training Calendars', 'Free Wifi & Community Support']
+        packageTitle: 'Monthly',
+        image: 'https://i.ibb.co/GsYyHBw/monthly.jpg',
+        price: '2000 BDT',
     },
     {
         id: 2,
-        packageTitle: 'Fat Loss',
-        packageDuration: '1 Year Training',
-        classDuration: '30 Min Session',
-        image: 'https://i.ibb.co/Bw8jLX5/2.jpg',
-        packageDescription: ['Fitness testing, Diet Plan', 'Weekly motivation and accountability', 'Ongoing nutrition support', 'Training Calendars', 'Free Wifi & Community Support']
+        packageTitle: 'Half Yearly',
+        image: 'https://i.ibb.co/n8tWnFH/half-Yearly.jpg',
+        price: '10000 BDT',
     },
     {
         id: 3,
-        packageTitle: 'Yoga & Streching',
-        packageDuration: '1 Year Training',
-        classDuration: '30 Min Session',
-        image: 'https://i.ibb.co/SvkWmZ6/3.jpg',
-        packageDescription: ['Fitness testing, Diet Plan', 'Weekly motivation and accountability', 'Ongoing nutrition support', 'Training Calendars', 'Free Wifi & Community Support']
+        packageTitle: 'Yearly',
+        image: 'https://i.ibb.co/RSktyGw/yearly.jpg',
+        price: '20000 BDT',
     },
     {
         id: 4,
-        packageTitle: 'Weight Lifting',
-        packageDuration: '1 Year Training',
-        classDuration: '30 Min Session',
-        image: 'https://i.ibb.co/pLvsWYy/4.jpg',
-        packageDescription: ['Fitness testing, Diet Plan', 'Weekly motivation and accountability', 'Ongoing nutrition support', 'Training Calendars', 'Free Wifi & Community Support']
+        packageTitle: 'Couple Monthly',
+        image: 'https://i.ibb.co/hHT0zSw/couple-Monthly.jpg',
+        price: '3000 BDT',
     },
     {
         id: 5,
-        packageTitle: 'Boxing Classes',
-        packageDuration: '1 Year Training',
-        classDuration: '30 Min Session',
-        image: 'https://i.ibb.co/ZX0XjbR/5.jpg',
-        packageDescription: ['Fitness testing, Diet Plan', 'Weekly motivation and accountability', 'Ongoing nutrition support', 'Training Calendars', 'Free Wifi & Community Support']
+        packageTitle: 'Couple Half Yearly',
+        image: 'https://i.ibb.co/VqQkRLW/Couple-training-together-at-the-gym.jpg',
+        price: '15000 BDT',
     },
     {
         id: 6,
-        packageTitle: 'Dance Classes',
-        packageDuration: '1 Year Training',
-        classDuration: '30 Min Session',
-        image: 'https://i.ibb.co/M9sXsjq/6.jpg',
-        packageDescription: ['Fitness testing, Diet Plan', 'Weekly motivation and accountability', 'Ongoing nutrition support', 'Training Calendars', 'Free Wifi & Community Support']
+        packageTitle: 'Couple Yearly',
+        image: 'https://i.ibb.co/gTXYHvX/Couple-training-together-at-the-gym.jpg',
+        price: '30000 BDT',
     }
 ]

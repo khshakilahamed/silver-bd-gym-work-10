@@ -3,13 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from './components/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NavBar from './components/Shared/NavBar/NavBar';
-import Footer from './components/Shared/Footer/Footer';
 import Services from './components/Services/Services';
 import Login from './components/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import NotFound from './components/NotFound/NotFound';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Blogs from './components/Blogs/Blogs';
+import About from './components/About/About';
+import Packages from './components/Packages/Packages';
+import PackageEnroll from './components/PackageEnroll/PackageEnroll';
 
 
 function App() {
@@ -25,14 +28,26 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/services">
+            <PrivateRoute path="/services">
               <Services></Services>
-            </Route>
-            <Route path="/service/:id">
+            </PrivateRoute>
+            <PrivateRoute path="/service/:id">
               <ServiceDetails></ServiceDetails>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/packages">
+              <Packages></Packages>PrivateRoute
+            </PrivateRoute>
+            <PrivateRoute path="/package/:id">
+              <PackageEnroll></PackageEnroll>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <PrivateRoute path="/blogs">
+              <Blogs></Blogs>
+            </PrivateRoute>
+            <Route path="/about">
+              <About></About>
             </Route>
             <Route path="*">
               <NotFound></NotFound>
