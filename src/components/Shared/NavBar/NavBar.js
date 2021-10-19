@@ -2,10 +2,14 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import useFirebase from '../../hooks/useFirebase';
 
 import './NavBar.css'
 
 const NavBar = () => {
+
+    const { user, handleLogout } = useFirebase();
+
     return (
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark py-4" sticky="top">
@@ -31,17 +35,28 @@ const NavBar = () => {
                             <Nav.Link as={HashLink} to="/home#pricing" className="navItems">About us</Nav.Link>
                         </Nav>
 
-                        <Navbar.Text>
-                            Signed in as: <a href="#login">Mark Otto</a>
-                        </Navbar.Text>
-                        <Nav.Link >
-                            <Link to="/login">
-                                <button className="btn btn-light">Login</button>
-                            </Link>
-                        </Nav.Link>
+                        {
+                            user?.email && (<Navbar.Text className="text-light">Hello, {user?.displayName}</Navbar.Text>)
+                        }
+
+                        {
+                            user?.email ? (
+                                <button onClick={handleLogout} className="btn btn-light">logout</button>
+                            ) : (
+                                <>
+
+                                    <Nav.Link >
+                                        <Link to="/login">
+                                            <button className="btn btn-light">Login</button>
+                                        </Link>
+                                    </Nav.Link>
+                                </>
+                            )
+                        }
 
 
-                        <button className="btn btn-light">logout</button>
+
+
 
                     </Navbar.Collapse>
                 </Container>

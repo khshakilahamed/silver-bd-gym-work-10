@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-4 mt-3">
-                        <h2 className="text-uppercase mb-3">Silver Gym</h2>
+                        <h4 className="text-uppercase mb-3">Silver Gym</h4>
                         <p>Silver Gym is a popular and faithful Gym at Dhaka in Bangladesh. Our slogan is "Build Your Body". To stay fit and healty GYM is the finest and best way. Because in our Gym under a roof you will get huge collection of gym instruments, Experienced Trainer, Heath Consultent, necessery suppliments and so on. SILVER GYM is fully Air Conditining</p>
 
                         <div>
@@ -21,7 +21,7 @@ const Footer = () => {
                         <p className="mt-3">@ 2021 Silver Gym Designed by Kh. Shakil</p>
                     </div>
                     <div className="col-md-3 mt-3">
-                        <h2 className="text-center text-uppercase mb-3">Quick Links</h2>
+                        <h4 className="text-center text-uppercase mb-3">Quick Links</h4>
                         <div className="quick-links text-center">
                             <Link to="/home" className="navItems">Home</Link>
                             <Link to="/packages" className="navItems">Packages</Link>
@@ -30,7 +30,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="col-md-5 mt-3">
-                        <h2 className="text-uppercase mb-3">Let us know your Suggestion</h2>
+                        <h4 className="text-uppercase mb-3">Let us know your Suggestion</h4>
                         <div className="user-feedback-container">
                             <input type="text" placeholder="Name" />
                             <input type="email" name="" id="" placeholder="Email" />

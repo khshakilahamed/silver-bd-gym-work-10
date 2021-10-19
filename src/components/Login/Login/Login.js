@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom';
 import google from '../../../images/logo/google.png';
 import facebook from '../../../images/logo/facebook.png';
 import github from '../../../images/logo/github.png';
-import './Login.css'
+import './Login.css';
+import useFirebase from '../../hooks/useFirebase';
+
 
 const Login = () => {
 
     const [isTrue, setIsTrue] = useState(true);
+
+
+    const { user, handleGoogleLogin } = useFirebase();
+
+    console.log(user);
+
 
 
     return (
@@ -15,6 +23,8 @@ const Login = () => {
             <div className="container">
                 <div className="d-flex justify-content-center">
                     <div className="login-form">
+
+                        {/* toggle login register form */}
 
                         {
                             isTrue ? (
@@ -42,6 +52,7 @@ const Login = () => {
                             )
                         }
 
+                        {/* button toggle */}
                         {
                             isTrue ? (
                                 <div>
@@ -65,7 +76,7 @@ const Login = () => {
                         <p>Login with</p>
                         <div>
                             <button className="authentication-btn">
-                                <img style={{ width: '40px', height: '40px' }} src={google} alt="" />
+                                <img onClick={handleGoogleLogin} style={{ width: '40px', height: '40px' }} src={google} alt="" />
                             </button>
                             <button className="authentication-btn">
                                 <img style={{ width: '40px', height: '40px' }} src={facebook} alt="" />
