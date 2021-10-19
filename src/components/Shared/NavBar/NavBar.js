@@ -2,13 +2,14 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 
 import './NavBar.css'
 
 const NavBar = () => {
 
-    const { user, handleLogout } = useFirebase();
+    const { user, handleLogout } = useAuth();
+
 
     return (
         <>
@@ -41,7 +42,7 @@ const NavBar = () => {
 
                         {
                             user?.email ? (
-                                <button onClick={handleLogout} className="btn btn-light">logout</button>
+                                <button onClick={handleLogout} className="btn btn-light ms-2">logout</button>
                             ) : (
                                 <>
 
@@ -53,11 +54,6 @@ const NavBar = () => {
                                 </>
                             )
                         }
-
-
-
-
-
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

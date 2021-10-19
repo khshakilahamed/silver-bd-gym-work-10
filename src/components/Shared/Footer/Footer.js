@@ -20,16 +20,7 @@ const Footer = () => {
 
                         <p className="mt-3">@ 2021 Silver Gym Designed by Kh. Shakil</p>
                     </div>
-                    <div className="col-md-3 mt-3">
-                        <h4 className="text-center text-uppercase mb-3">Quick Links</h4>
-                        <div className="quick-links text-center">
-                            <Link to="/home" className="navItems">Home</Link>
-                            <Link to="/packages" className="navItems">Packages</Link>
-                            <Link to="/gallery" className="navItems">Gallery</Link>
-                            <Link to="/blog" className="navItems">Blog</Link>
-                        </div>
-                    </div>
-                    <div className="col-md-5 mt-3">
+                    <div className="col-md-5 mt-3 ps-md-5">
                         <h4 className="text-uppercase mb-3">Let us know your Suggestion</h4>
                         <div className="user-feedback-container">
                             <input type="text" placeholder="Name" />
@@ -37,6 +28,16 @@ const Footer = () => {
                             <textarea name="" id="" cols="30" rows="5" placeholder="Write your suggestion" />
                         </div>
                     </div>
+                    <div className="col-md-3 mt-3">
+                        <h4 className="text-center text-uppercase mb-3">Quick Links</h4>
+                        <div className="quick-links text-center">
+                            <Link to="/home" className="navItems">Home</Link>
+                            <Link to="/services" className="navItems">Services</Link>
+                            <Link to="/gallery" className="navItems">Gallery</Link>
+                            <Link to="/blog" className="navItems">Blog</Link>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
