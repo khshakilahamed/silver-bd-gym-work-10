@@ -12,7 +12,7 @@ const PackageEnroll = () => {
 
     const { packageTitle, image } = matchedPackages || {};
 
-    console.log(packageTitle);
+    // console.log(packageTitle);
 
     useEffect(() => {
         fetch('/fakePackagesData.json')
@@ -23,7 +23,7 @@ const PackageEnroll = () => {
 
     useEffect(() => {
         const matched = packages.find(packAge => packAge.id == id);
-        console.log(matched);
+        // console.log(matched);
         setMatchedPackages(matched);
     }, [packages]);
 

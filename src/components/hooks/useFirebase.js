@@ -9,6 +9,7 @@ initializeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     // console.log(user);
 
@@ -44,6 +45,7 @@ const useFirebase = () => {
     }
 
     const loginUsingEmailPassword = (email, password) => {
+        setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setError('');
@@ -53,10 +55,12 @@ const useFirebase = () => {
             .catch(error => {
                 setError(error.message);
             })
+            .finally(() => setIsLoading(false))
 
     }
 
     const handleGoogleLogin = () => {
+        setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 setUser(result.user);
@@ -64,9 +68,11 @@ const useFirebase = () => {
             .catch(error => {
                 setError(error.message);
             })
+            .finally(() => setIsLoading(false))
     }
 
     const handleFacebookLogin = () => {
+        setIsLoading(true)
         signInWithPopup(auth, facebookProvider)
             .then(result => {
                 setUser(result.user);
@@ -74,9 +80,11 @@ const useFirebase = () => {
             .catch(error => {
                 setError(error.message);
             })
+            .finally(() => setIsLoading(false))
     }
 
     const handleGithubLogin = () => {
+        setIsLoading(true)
         signInWithPopup(auth, githubProvider)
             .then(result => {
                 setUser(result.user);
@@ -84,14 +92,17 @@ const useFirebase = () => {
             .catch(error => {
                 setError(error.message);
             })
+            .finally(() => setIsLoading(false))
     }
 
 
     const handleLogout = () => {
+        setIsLoading(true)
         signOut(auth)
             .then(() => {
                 setUser({});
             })
+            .finally(() => setIsLoading(false));
     }
 
 
