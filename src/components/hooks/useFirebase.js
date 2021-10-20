@@ -1,8 +1,6 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, FacebookAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, FacebookAuthProvider, GithubAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, sendPasswordResetEmail } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../../firebase/firebase.init";
-
-
 
 
 
@@ -10,18 +8,22 @@ initializeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState({});
-    const [error, setError] = useState('')
+    const [error, setError] = useState('');
+
+    // console.log(user);
 
     const auth = getAuth();
 
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const createUserAccount = (name, email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const { user } = result;
-                user.displayName = name;
+                window.location.reload();
+                setUserName(name);
+                setError('');
                 setUser(result.user);
             })
             .catch(error => {
@@ -29,12 +31,24 @@ const useFirebase = () => {
             })
     }
 
+
+    const setUserName = (name) => {
+        updateProfile(auth.currentUser, { displayName: name })
+            .then(result => { })
+    }
+
+
+    const resetPassword = (email) => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => { })
+    }
+
     const loginUsingEmailPassword = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setError('');
-
-                console.log(result.user);
+                // window.location.reload();
+                setUser(result.user);
             })
             .catch(error => {
                 setError(error.message);
@@ -62,6 +76,16 @@ const useFirebase = () => {
             })
     }
 
+    const handleGithubLogin = () => {
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                setUser(result.user);
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    }
+
 
     const handleLogout = () => {
         signOut(auth)
@@ -74,13 +98,18 @@ const useFirebase = () => {
     useEffect(() => {
         onAuthStateChanged(auth, user => {
             if (user) {
-                setUser(user)
+                setUser(user);
             }
             else {
-
+                setUser({});
             }
         })
-    }, [])
+    }, []);
+
+
+    const handleError = (errorMessage) => {
+        setError(errorMessage);
+    }
 
 
 
@@ -92,8 +121,10 @@ const useFirebase = () => {
         loginUsingEmailPassword,
         handleGoogleLogin,
         handleFacebookLogin,
-        // handleGithubLogin,
+        handleGithubLogin,
         handleLogout,
+        handleError,
+        resetPassword,
     }
 
 }

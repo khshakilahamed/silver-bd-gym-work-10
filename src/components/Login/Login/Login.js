@@ -18,7 +18,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
 
-    const { error, handleGoogleLogin, handleFacebookLogin, createUserAccount, loginUsingEmailPassword } = useAuth();
+    const { error, handleGoogleLogin, handleFacebookLogin, handleGithubLogin, createUserAccount, loginUsingEmailPassword, handleError, resetPassword } = useAuth();
 
     // console.log(user);
 
@@ -34,11 +34,30 @@ const Login = () => {
 
 
     const handleRegister = () => {
-        createUserAccount(name, email, password);
+        if (!name) {
+            handleError("Please, provide your name");
+            return;
+        }
+        if (!email) {
+            handleError("Please, provide your email");
+            return;
+        }
+        if (!password) {
+            handleError("Please, provide your password");
+            return;
+        }
+        else {
+            createUserAccount(name, email, password);
+        }
+
     }
 
     const handleLogin = () => {
         loginUsingEmailPassword(email, password);
+    }
+
+    const handleResetPassword = () => {
+        resetPassword(email)
     }
 
 
@@ -50,7 +69,7 @@ const Login = () => {
                     <div className="d-flex justify-content-center">
                         <div className="login-form">
 
-                            {/* toggle login register form */}
+                            {/* toggle login, register form */}
 
                             {
                                 isTrue ? (
@@ -66,6 +85,9 @@ const Login = () => {
                                         {
                                             error && <p className="text-danger">{error}</p>
                                         }
+                                        <div className="d-flex ms-2">
+                                            <p><small className="text-danger" onClick={() => handleResetPassword()} style={{ cursor: 'pointer' }}>Reset Password?</small></p>
+                                        </div>
                                         <button onClick={() => handleLogin()} className="login-btn my-3 btn btn-light">login</button>
                                         <p ><small>Don't have? <span style={{ cursor: 'pointer' }} className="text-primary" onClick={() => { setIsTrue(false) }}>Click Here</span></small> </p>
 
@@ -81,7 +103,9 @@ const Login = () => {
                                             <input onBlur={handlePassword} type="password" name="" id="" placeholder="Password" required />
                                             <br />
                                         </form>
-
+                                        {
+                                            error && <p className="text-danger">{error}</p>
+                                        }
                                         <button onClick={() => handleRegister()} className="login-btn my-3 btn btn-light">Register</button>
                                         <p ><small>Already have? <span style={{ cursor: 'pointer' }} className="text-primary" onClick={() => { setIsTrue(true) }}>Click Here</span></small> </p>
 
@@ -104,7 +128,7 @@ const Login = () => {
                                     <img onClick={handleFacebookLogin} style={{ width: '40px', height: '40px' }} src={facebook} alt="" />
                                 </button>
                                 <button className="authentication-btn">
-                                    <img style={{ width: '40px', height: '40px' }} src={github} alt="" />
+                                    <img onClick={handleGithubLogin} style={{ width: '40px', height: '40px' }} src={github} alt="" />
                                 </button>
                             </div>
                         </div>

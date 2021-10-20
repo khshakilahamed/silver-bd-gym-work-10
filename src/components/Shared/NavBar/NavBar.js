@@ -40,11 +40,11 @@ const NavBar = () => {
                         </Nav>
 
                         {
-                            user?.email && (<Navbar.Text className="text-light">Hello, {user?.displayName}</Navbar.Text>)
+                            user?.displayName && (<Navbar.Text className="text-light">Hello, {user?.displayName}</Navbar.Text>)
                         }
 
                         {
-                            user?.email ? (
+                            user?.displayName ? (
                                 <button onClick={handleLogout} className="btn btn-light ms-2">logout</button>
                             ) : (
                                 <>
