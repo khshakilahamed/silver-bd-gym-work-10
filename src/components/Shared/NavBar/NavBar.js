@@ -45,13 +45,13 @@ const NavBar = () => {
 
                         {
                             user?.displayName ? (
-                                <button onClick={handleLogout} className="btn btn-light ms-2">logout</button>
+                                <button onClick={handleLogout} className="btn btn-light ms-2 login-register-btn">logout</button>
                             ) : (
                                 <>
 
                                     <Nav.Link >
                                         <Link to="/login">
-                                            <button className="btn btn-light">Login</button>
+                                            <button className="btn btn-light login-register-btn">Login</button>
                                         </Link>
                                     </Nav.Link>
                                 </>

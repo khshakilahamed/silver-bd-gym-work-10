@@ -13,7 +13,7 @@ const Blogs = () => {
         <div>
             <NavBar></NavBar>
             <div className="container">
-                <div className="row mt-4">
+                <div className="row my-4">
                     <div className="col-md-9 px-3">
                         <h3>Let's Know the Benefits of Exercise.</h3>
                         <p>Want to feel better, have more energy and even add years to your life? Just exercise.The health benefits of regular exercise and physical activity are hard to ignore. Everyone benefits from exercise, regardless of age, sex or physical ability.Need more convincing to get moving? Check out these seven ways that exercise can lead to a happier, healthier you.</p>

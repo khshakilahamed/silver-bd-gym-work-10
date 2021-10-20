@@ -1,11 +1,20 @@
+.login-register-btn{
+    transition: background .5s;
+}
+.login-register-btn:hover{
+    background: black;
+    color: white;
+}
+
 .login-container{
-    background: url('https://i.ibb.co/mRBBzC3/login-bg.jpg');
+    /* background: url('https://i.ibb.co/mRBBzC3/login-bg.jpg'); */
+    background: url('https://i.ibb.co/X5Z4yvg/login-bg-1-1.jpg');
     width: 100%;
     background-position: center;
     background-size: cover;
     overflow: hidden;
     background-attachment: fixed;
-    height: 500px;
+    height: 600px;
     text-align: center
 }
 

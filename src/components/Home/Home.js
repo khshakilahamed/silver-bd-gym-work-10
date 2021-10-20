@@ -4,11 +4,10 @@ import Banner from '../Banner/Banner';
 import GymBenefits from '../GymBenefits/GymBenefits';
 import GymTrainers from '../GymTrainers/GymTrainers';
 import Package from '../Package/Package';
-import Packages from '../Packages/Packages';
-
 import Service from '../Service/Service';
 import Footer from '../Shared/Footer/Footer';
 import NavBar from '../Shared/NavBar/NavBar';
+import './Home.css'
 
 const Home = () => {
 
@@ -31,8 +30,6 @@ const Home = () => {
 
 
     return (
-
-
         <div>
             <NavBar></NavBar>
             <Banner></Banner>
@@ -49,7 +46,7 @@ const Home = () => {
                     <div className="text-center">
 
                         <Link to="/services">
-                            <button className="btn btn-primary mb-5">More Services</button>
+                            <button className="btn btn-primary my-4 shadow component-btn">More Services</button>
                         </Link>
                     </div>
                 </div>
@@ -69,7 +66,7 @@ const Home = () => {
                 </div>
                 <div className="text-center mt-2 mb-5">
                     <Link to="/packages">
-                        <button className="btn btn-primary ">More Packages</button>
+                        <button className="btn btn-primary shadow component-btn">More Packages</button>
                     </Link>
                 </div>
             </div>

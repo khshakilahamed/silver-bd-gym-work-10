@@ -36,9 +36,10 @@ const PackageEnroll = () => {
                         <img src={image} className="img-fluid" alt="" />
                     </div>
                     <div className="col-md-6">
-                        <h2> You have enrolled:  {packageTitle}</h2>
-                        <h1 style={{}}>Thank You</h1>
-                        <Link to="/home"><button className="btn btn-dark my-5">Back to Home</button></Link>
+                        <h2 className="fw-lighter text-uppercase" style={{ color: 'hsl(93, 41%, 46%)' }}>Package: {packageTitle}</h2>
+                        <h2 className="text-uppercase fw-light my-3"> You have <br /> Successfully enrolled</h2>
+                        <h2 className="my-5 text-uppercase fw-light">Thank You</h2>
+                        <Link to="/home"><button className="btn btn-dark my-5 regular-btn">Back to Home</button></Link>
                     </div>
                 </div>
             </div>

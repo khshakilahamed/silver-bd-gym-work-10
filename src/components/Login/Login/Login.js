@@ -76,9 +76,9 @@ const Login = () => {
                                     <div>
                                         <h2 className="">Login Here</h2>
                                         <form className="pt-3">
-                                            <input onBlur={handleEmail} type="email" name="" id="" placeholder="Email" required />
+                                            <input onBlur={handleEmail} className="rounded" type="email" name="" id="" placeholder="Email" required />
                                             <br />
-                                            <input onBlur={handlePassword} type="password" name="" id="" placeholder="Password" required />
+                                            <input onBlur={handlePassword} className="rounded" type="password" name="" id="" placeholder="Password" required />
                                             <br />
                                         </form>
 
@@ -88,26 +88,26 @@ const Login = () => {
                                         <div className="d-flex ms-2">
                                             <p><small className="text-danger" onClick={() => handleResetPassword()} style={{ cursor: 'pointer' }}>Reset Password?</small></p>
                                         </div>
-                                        <button onClick={() => handleLogin()} className="login-btn my-3 btn btn-light">login</button>
-                                        <p ><small>Don't have? <span style={{ cursor: 'pointer' }} className="text-primary" onClick={() => { setIsTrue(false) }}>Click Here</span></small> </p>
+                                        <button onClick={() => handleLogin()} className="login-btn mb-3 btn btn-light login-register-btn">login</button>
+                                        <p ><small>Don't have account? <span style={{ cursor: 'pointer' }} className="text-primary" onClick={() => { setIsTrue(false) }}>Click Here</span></small> </p>
 
                                     </div>
                                 ) : (
                                     <div>
                                         <h2 className="">Register Here</h2>
                                         <form className="pt-3">
-                                            <input onBlur={handleName} type="text" placeholder="Name" required />
+                                            <input onBlur={handleName} className="rounded" type="text" placeholder="Name" required />
                                             <br />
-                                            <input onBlur={handleEmail} type="email" name="" id="" placeholder="Email" required />
+                                            <input onBlur={handleEmail} className="rounded" type="email" name="" id="" placeholder="Email" required />
                                             <br />
-                                            <input onBlur={handlePassword} type="password" name="" id="" placeholder="Password" required />
+                                            <input onBlur={handlePassword} className="rounded" type="password" name="" id="" placeholder="Password" required />
                                             <br />
                                         </form>
                                         {
                                             error && <p className="text-danger">{error}</p>
                                         }
-                                        <button onClick={() => handleRegister()} className="login-btn my-3 btn btn-light">Register</button>
-                                        <p ><small>Already have? <span style={{ cursor: 'pointer' }} className="text-primary" onClick={() => { setIsTrue(true) }}>Click Here</span></small> </p>
+                                        <button onClick={() => handleRegister()} className="login-btn my-3 btn btn-light login-register-btn">Register</button>
+                                        <p ><small>Already have an account? <span style={{ cursor: 'pointer' }} className="text-primary" onClick={() => { setIsTrue(true) }}>Click Here</span></small> </p>
 
                                     </div>
                                 )

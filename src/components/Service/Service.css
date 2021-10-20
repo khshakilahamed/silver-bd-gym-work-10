@@ -1,0 +1,16 @@
+.cards-container{
+    transition: background 0.5s;
+}
+.cards-container:hover{
+    background: rgb(216, 216, 216);
+}
+
+.regular-btn{
+    /* border: none; */
+    transition: background 1s, color 0.3s;
+}
+
+.regular-btn:hover{
+    background: white;
+    color: black;
+}

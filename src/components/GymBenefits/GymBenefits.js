@@ -20,7 +20,7 @@ const GymBenefits = () => {
                     <p><i className="fas fa-check me-3"></i>Exercise puts the spark back into your sex life.</p>
 
                     <Link to="/blogs">
-                        <button className="btn btn-dark mt-4">More Details</button>
+                        <button className="btn btn-dark mt-4 shadow regular-btn">More Details</button>
                     </Link>
                 </div>
             </div>
